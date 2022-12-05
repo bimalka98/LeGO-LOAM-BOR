@@ -6,6 +6,8 @@ For the other functionalities, see [the original LeGO-LOAM](https://github.com/R
 
 This code uses this [LeGO-LOAM-BOR repository](https://github.com/koide3/LeGO-LOAM-BOR) as its base due to its speed improvements over the LeGO LOAM and the map saving code.
 
+Here is a small presentation explaining some details of the project: [Google Slides](https://docs.google.com/presentation/d/1hLsdZBPeskEYjqSvs-k1t2H6gw3AjAejZmBluoHqUR8/edit?usp=sharing)
+
 ### Saving the map in the first run
 <p align='center'>
     <img src="./LeGO-LOAM/launch/createMap_demo.gif" alt="drawing" width="800"/>

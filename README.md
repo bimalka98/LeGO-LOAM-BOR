@@ -1,3 +1,34 @@
+# Build with ROS Noetic (Ubuntu 20.04)
+
+**Note from original LeGO-LOAM:** When you compile the code for the first time, you need to add `-j1`behind `catkin build` for generating some message types. `-j1` is not needed for future compiling.
+
+```shell
+bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ catkin build -j1
+```
+
+---
+
+#  Fixing for Ubuntu 20.04
+
+* According to https://github.com/Nishantgoyal918/LeGO-LOAM-BOR: fixing for ubuntu 20.04
+
+
+### Do this first 
+modify file `/usr/include/pcl-1.10/pcl/filters/voxel_grid.h` : line 340 and line 669
+
+* Old:
+```cpp
+for (Eigen::Index ni = 0; ni < relative_coordinates.cols (); ni++)
+```
+* New:
+```cpp
+for (int ni = 0; ni < relative_coordinates.cols (); ni++)
+``` 
+
+--- 
+
+> Fork at https://github.com/entc-18-fyp-15/LeGO-LOAM-BOR initialized from https://github.com/Nishantgoyal918/LeGO-LOAM-BOR.git. Given below is its README.
+
 # Localisation in Premapped Environment
 
 This is a customised LeGO-LOAM to save the mapping result during the first run and then localise in a premapped environment for later runs. The map is stored in the dump format readable from [interactive slam](https://github.com/SMRT-AIST/interactive_slam) in the ```/tmp/dump``` folder and is read from the same folder while localising in the premapped environment.

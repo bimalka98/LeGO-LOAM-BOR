@@ -39,7 +39,7 @@ class TransformFusion {
   void transformAssociateToMap();
   /**
    * Handler for Laser Odometry that publishes TransformMapped and 
-   * also the tf between /camera_init and /camera
+   * also the tf between camera_init and camera
   */
   void laserOdometryHandler(const nav_msgs::Odometry::ConstPtr& laserOdometry);
   /**

@@ -277,7 +277,7 @@ class MapOptimization {
   pcl::PointCloud<PointType>::Ptr transformPointCloud(
       pcl::PointCloud<PointType>::Ptr cloudIn, PointTypePose *transformIn);
   /**
-   * Publish TransformAftMapped to /aft_mapped
+   * Publish TransformAftMapped to aft_mapped
    **/ 
   void publishTF();
   /**

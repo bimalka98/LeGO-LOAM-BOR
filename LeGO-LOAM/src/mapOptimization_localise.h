@@ -282,7 +282,7 @@ class MapOptimization {
   pcl::PointCloud<PointType>::Ptr transformPointCloud(
       pcl::PointCloud<PointType>::Ptr cloudIn, PointTypePose *transformIn);
   /**
-   * Publish TransformAftMapped to /aft_mapped
+   * Publish TransformAftMapped to aft_mapped
    * and Odometry data of TransformAftMapped and 
    * TransformBefMapped to /aft_mapped_to_init
    **/ 

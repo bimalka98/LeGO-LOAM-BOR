@@ -1,19 +1,20 @@
 # Build with ROS Noetic (Ubuntu 20.04)
 
-**Note from original LeGO-LOAM:** When you compile the code for the first time, you need to add `-j1`behind `catkin build` for generating some message types. `-j1` is not needed for future compiling.
+**Note from original LeGO-LOAM:** When you compile the code for the first time, you need to add `-j1` behind `catkin build` for generating some message types. `-j1` is not needed for future compiling.
 
 ```shell
 bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ catkin build -j1
 ```
+## Progress
+
+[view](figures/progress.md)
 
 ---
 
-#  Fixing for Ubuntu 20.04
+##  Fixing for Ubuntu 20.04
 
-* According to https://github.com/Nishantgoyal918/LeGO-LOAM-BOR: fixing for ubuntu 20.04
+1. According to https://github.com/Nishantgoyal918/LeGO-LOAM-BOR: fixing for ubuntu 20.04
 
-
-### Do this first 
 modify file `/usr/include/pcl-1.10/pcl/filters/voxel_grid.h` : line 340 and line 669
 
 * Old:
@@ -24,6 +25,12 @@ for (Eigen::Index ni = 0; ni < relative_coordinates.cols (); ni++)
 ```cpp
 for (int ni = 0; ni < relative_coordinates.cols (); ni++)
 ``` 
+
+2. Fixed point cloud invisible problem folowing https://github.com/Livox-SDK/livox_mapping/issues/6#issuecomment-1007601707
+
+
+What elese to change: found when comparing our fork's original with its original.
+https://github.com/Nishantgoyal918/LeGO-LOAM-BOR/compare/master...koide3:LeGO-LOAM-BOR:master
 
 --- 
 

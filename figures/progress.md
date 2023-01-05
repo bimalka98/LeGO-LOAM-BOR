@@ -6,7 +6,12 @@
 
 ```shell
 
+# Mapping
 bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ roslaunch lego_loam_bor createMap.launch rosbag:=/home/bimalka98/ros/rosbags/lego_loam/2017-06-08-15-51-45_2.bag  lidar_topic:=/velodyne_points
+
+# Localization
+bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ roslaunch lego_loam_bor localization.launch rosbag:=/home/bimalka98/ros/rosbags/lego_loam/2017-06-08-15-51-45_2.bag  lidar_topic:=/velodyne_points
+
 
 ```
 

@@ -18,3 +18,12 @@ bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ roslaunch lego_loam_bor localization.la
 <p align='left'>
     <img src="./rosbag_play.png" alt="drawing" width="800"/>
 </p>
+
+# Checked on Jetson Nano
+
+Rosbag plays with X0.8, X0.9 speeds. Reasonable.
+
+<p align='left'>
+    <img src="./lego-loam-on-jetson.png" alt="drawing" width="800"/>
+</p>
+

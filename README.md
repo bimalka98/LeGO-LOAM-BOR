@@ -15,7 +15,8 @@ bimalka98@LAP-BIMALKA98:~/ros/catkin_ws$ catkin build -j1
 
 1. According to https://github.com/Nishantgoyal918/LeGO-LOAM-BOR: fixing for ubuntu 20.04
 
-modify file `/usr/include/pcl-1.10/pcl/filters/voxel_grid.h` : line 340 and line 669
+* This was not required on the Jetson Nano. [Found Unnecessary].
+* modify file `/usr/include/pcl-1.10/pcl/filters/voxel_grid.h` : line 340 and line 669
 
 * Old:
 ```cpp

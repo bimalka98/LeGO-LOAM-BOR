@@ -59,7 +59,7 @@ So this command is publishing a static transform from the 'map' frame to the 've
 
 
 
-## Analysing the TF Tree of lego-loam-bor: [view pdf](lego-loam-bor-frames.pdf)
+## [Analysing the TF Tree](http://wiki.ros.org/tf/Debugging%20tools) of lego-loam-bor: [view pdf](lego-loam-bor-frames.pdf)
 
 * TypeError: string pattern on a bytes-like object
 Wanted to use https://github.com/ros/geometry/pull/193/commits/adb39545d98c8d17ecd3224a4a4ae0042614bc0b

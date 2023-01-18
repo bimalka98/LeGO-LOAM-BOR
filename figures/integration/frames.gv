@@ -1,0 +1,5 @@
+digraph G {
+"camera_init" -> "laser_odom"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 \nBuffer length: 0.000 sec\n"];
+"camera_init" -> "camera"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 \nBuffer length: 0.000 sec\n"];
+"camera_init" -> "aft_mapped"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 \nBuffer length: 0.000 sec\n"];
+}

@@ -1,0 +1,26 @@
+digraph G {
+"odom" -> "camera_init"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 99.363 Hz\nMost recent transform: 1496951398.421 \nBuffer length: 4.992 sec\n"];
+"map" -> "odom"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 99.434 Hz\nMost recent transform: 1496951398.428 \nBuffer length: 4.998 sec\n"];
+"chassis_link" -> "imu_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 109.743 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.504 sec\n"];
+"mid_mount" -> "velodyne"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 99.476 Hz\nMost recent transform: 1496951398.427 \nBuffer length: 4.996 sec\n"];
+"chassis_link" -> "mid_mount"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"aft_mapped" -> "base_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 99.495 Hz\nMost recent transform: 1496951398.421 \nBuffer length: 4.985 sec\n"];
+"camera_init" -> "aft_mapped"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 5.806 Hz\nMost recent transform: 1496951398.045 \nBuffer length: 4.823 sec\n"];
+"base_link" -> "chassis_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"chassis_link" -> "fenders_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"mid_mount" -> "front_mount"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"chassis_link" -> "navsat_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"mid_mount" -> "rear_mount"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_mount" -> "rear_bridge"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_bridge" -> "rear_navsat"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_mount" -> "rear_standoff0"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_mount" -> "rear_standoff1"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_mount" -> "rear_standoff2"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"rear_mount" -> "rear_standoff3"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 50.203 Hz\nMost recent transform: 1496951398.907 \nBuffer length: 5.000 sec\n"];
+"chassis_link" -> "front_left_wheel_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 32.056 Hz\nMost recent transform: 1496951398.381 \nBuffer length: 4.960 sec\n"];
+"chassis_link" -> "front_right_wheel_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 32.056 Hz\nMost recent transform: 1496951398.381 \nBuffer length: 4.960 sec\n"];
+"chassis_link" -> "rear_left_wheel_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 32.056 Hz\nMost recent transform: 1496951398.381 \nBuffer length: 4.960 sec\n"];
+"chassis_link" -> "rear_right_wheel_link"[label="Broadcaster: /play_1674027122465415860\nAverage rate: 32.056 Hz\nMost recent transform: 1496951398.381 \nBuffer length: 4.960 sec\n"];
+"camera_init" -> "laser_odom"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 9.741 Hz\nMost recent transform: 1496951398.360 \nBuffer length: 4.927 sec\n"];
+"camera_init" -> "camera"[label="Broadcaster: /lego_loam_bor_create_map\nAverage rate: 9.741 Hz\nMost recent transform: 1496951398.360 \nBuffer length: 4.927 sec\n"];
+}

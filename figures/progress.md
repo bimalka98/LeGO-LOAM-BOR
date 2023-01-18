@@ -27,10 +27,13 @@ Rosbag plays with X0.8, X0.9 speeds. Reasonable.
     <img src="./lego-loam-on-jetson.png" alt="drawing" width="800"/>
 </p>
 
+----
+
 # Integrating with the Velodyne LiDAR
 
 ## Getting an Error: `For frame [base_link]: Fixed Frame [map] does not exist`
 
+### Checking the sol: 1
 * From Velodyne tutorial [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16). If you have an error about no fixed frame, use: 
 ```
 rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map velodyne 10
@@ -56,3 +59,34 @@ So this command is publishing a static transform from the 'map' frame to the 've
 
 
 
+## Analysing the TF Tree of lego-loam-bor: [view pdf](frames.pdf)
+
+* TypeError: string pattern on a bytes-like object
+Wanted to use https://github.com/ros/geometry/pull/193/commits/adb39545d98c8d17ecd3224a4a4ae0042614bc0b
+
+```shell
+$ rosrun tf view_frames
+
+Listening to /tf for 5.0 seconds
+Done Listening
+b'dot - graphviz version 2.40.1 (20161225.0304)\n'
+Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/tf/view_frames", line 119, in <module>
+    generate(dot_graph)
+  File "/opt/ros/melodic/lib/tf/view_frames", line 89, in generate # change this file using sudo gedit
+    m = r.search(vstr)
+TypeError: cannot use a string pattern on a bytes-like object
+```
+
+* Simply adding the .decode('utf-8') to m = r.search(vstr.decode('utf-8')) fixed it.
+
+### RViz
+<p align='left'>
+    <img src="./lego-loam-frames.png" alt="drawing" width="800"/>
+</p>
+
+### Rqt-Graph
+
+<p align='left'>
+    <img src="./lego-loam-rqt_graph.png" alt="drawing" width="800"/>
+</p>

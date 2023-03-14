@@ -1,0 +1,562 @@
+Summary of rosmsg types:
+
+
+Published topics:
+ * /rosout_agg [rosgraph_msgs/Log] 2 publishers
+ * /rosout [rosgraph_msgs/Log] 5 publishers
+ * /tf [tf2_msgs/TFMessage] 4 publishers
+ * /full_cloud_projected [sensor_msgs/PointCloud2] 1 publisher
+ * /full_cloud_info [sensor_msgs/PointCloud2] 1 publisher
+ * /ground_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /segmented_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /segmented_cloud_pure [sensor_msgs/PointCloud2] 1 publisher
+ * /segmented_cloud_info [cloud_msgs/cloud_info] 1 publisher
+ * /outlier_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_sharp [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_less_sharp [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_flat [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_less_flat [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_corner_last [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_surf_last [sensor_msgs/PointCloud2] 1 publisher
+ * /outlier_cloud_last [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_odom_to_init [nav_msgs/Odometry] 1 publisher
+ * /key_pose_origin [sensor_msgs/PointCloud2] 1 publisher
+ * /laser_cloud_surround [sensor_msgs/PointCloud2] 1 publisher
+ * /aft_mapped_to_init [nav_msgs/Odometry] 1 publisher
+ * /history_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /corrected_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /recent_cloud [sensor_msgs/PointCloud2] 1 publisher
+ * /integrated_to_init [nav_msgs/Odometry] 1 publisher
+ * /tf/odometry [nav_msgs/Odometry] 1 publisher
+ * /clock [rosgraph_msgs/Clock] 1 publisher
+ * /imu/data [sensor_msgs/Imu] 1 publisher
+ * /velodyne_points [sensor_msgs/PointCloud2] 1 publisher
+ * /pointcloud_2_laserscan [sensor_msgs/LaserScan] 1 publisher
+ * /filtered_pointcloud [sensor_msgs/PointCloud2] 1 publisher
+ * /move_base/local_costmap/costmap [nav_msgs/OccupancyGrid] 1 publisher
+ * /occupancy_map_local [nav_msgs/OccupancyGrid] 1 publisher
+ * /elevation_pointcloud [sensor_msgs/PointCloud2] 1 publisher
+ * /prm_path [visualization_msgs/Marker] 1 publisher
+ * /prm_graph [visualization_msgs/Marker] 1 publisher
+ * /move_base/global_costmap/costmap [nav_msgs/OccupancyGrid] 1 publisher
+ * /global_path [nav_msgs/Path] 1 publisher
+ * /bona_pointcloud [sensor_msgs/PointCloud2] 1 publisher
+ * /prm_single_source_paths [visualization_msgs/Marker] 1 publisher
+ * /full_point_cloud [sensor_msgs/PointCloud2] 1 publisher
+
+Subscribed topics:
+ * /clock [rosgraph_msgs/Clock] 6 subscribers
+ * /rosout [rosgraph_msgs/Log] 1 subscriber
+ * /velodyne_points [sensor_msgs/PointCloud2] 1 subscriber
+ * /tf/odometry [nav_msgs/Odometry] 1 subscriber
+ * /vehicle_gps [sensor_msgs/NavSatFix] 1 subscriber
+ * /laser_odom_to_init [nav_msgs/Odometry] 1 subscriber
+ * /aft_mapped_to_init [nav_msgs/Odometry] 2 subscribers
+ * /tf [tf2_msgs/TFMessage] 1 subscriber
+ * /tf_static [tf2_msgs/TFMessage] 1 subscriber
+ * /laser_cloud_surround [sensor_msgs/PointCloud2] 1 subscriber
+ * /laser_cloud_less_flat [sensor_msgs/PointCloud2] 1 subscriber
+ * /key_pose_origin [sensor_msgs/PointCloud2] 1 subscriber
+ * /laser_cloud_less_sharp [sensor_msgs/PointCloud2] 1 subscriber
+
+=================================================
+Detailed info of rosmsg types:
+
+ROS topic - /aft_mapped_to_init
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /bona_pointcloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /clock
+Type: rosgraph_msgs/Clock
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: 
+ * /rosout (http://LAP-BIMALKA98:36153/)
+ * /camera_init_to_map (http://LAP-BIMALKA98:43395/)
+ * /base_link_to_camera (http://LAP-BIMALKA98:42229/)
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+ * /rviz (http://LAP-BIMALKA98:35803/)
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+
+====================
+
+ROS topic - /corrected_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /elevation_pointcloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /filtered_pointcloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /full_cloud_info
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /full_cloud_projected
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /full_point_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /global_path
+Type: nav_msgs/Path
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /ground_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /history_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /imu/data
+Type: sensor_msgs/Imu
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /integrated_to_init
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /key_pose_origin
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /laser_cloud_corner_last
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /laser_cloud_flat
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /laser_cloud_less_flat
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /laser_cloud_less_sharp
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /laser_cloud_sharp
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /laser_cloud_surf_last
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /laser_cloud_surround
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /laser_odom_to_init
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+
+====================
+
+ROS topic - /move_base/global_costmap/costmap
+Type: nav_msgs/OccupancyGrid
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /move_base/local_costmap/costmap
+Type: nav_msgs/OccupancyGrid
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /occupancy_map_local
+Type: nav_msgs/OccupancyGrid
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /outlier_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /outlier_cloud_last
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /pointcloud_2_laserscan
+Type: sensor_msgs/LaserScan
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /prm_graph
+Type: visualization_msgs/Marker
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /prm_path
+Type: visualization_msgs/Marker
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /prm_single_source_paths
+Type: visualization_msgs/Marker
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /recent_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /rosout
+Type: rosgraph_msgs/Log
+
+Publishers: 
+ * /camera_init_to_map (http://LAP-BIMALKA98:43395/)
+ * /base_link_to_camera (http://LAP-BIMALKA98:42229/)
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+ * /rviz (http://LAP-BIMALKA98:35803/)
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: 
+ * /rosout (http://LAP-BIMALKA98:36153/)
+
+
+====================
+
+ROS topic - /rosout_agg
+Type: rosgraph_msgs/Log
+
+Publishers: 
+ * /rosout (http://LAP-BIMALKA98:36153/)
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /segmented_cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /segmented_cloud_info
+Type: cloud_msgs/cloud_info
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /segmented_cloud_pure
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: None
+
+
+====================
+
+ROS topic - /tf
+Type: tf2_msgs/TFMessage
+
+Publishers: 
+ * /camera_init_to_map (http://LAP-BIMALKA98:43395/)
+ * /base_link_to_camera (http://LAP-BIMALKA98:42229/)
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /tf/odometry
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+Subscribers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+
+====================
+
+ROS topic - /tf_static
+Type: tf2_msgs/TFMessage
+
+Publishers: None
+
+Subscribers: 
+ * /rviz (http://LAP-BIMALKA98:35803/)
+
+
+====================
+
+ROS topic - /vehicle_gps
+Type: sensor_msgs/NavSatFix
+
+Publishers: None
+
+Subscribers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+
+====================
+
+ROS topic - /velodyne_points
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /play_1678779652887003831 (http://LAP-BIMALKA98:46315/)
+
+Subscribers: 
+ * /lego_loam_bor_create_map (http://LAP-BIMALKA98:46277/)
+
+
+====================
+

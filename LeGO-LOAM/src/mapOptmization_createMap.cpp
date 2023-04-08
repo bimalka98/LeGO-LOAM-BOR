@@ -123,7 +123,8 @@ MapOptimization::MapOptimization(ros::NodeHandle &node,
 
 MapOptimization::~MapOptimization()
 {
-  dump("/tmp/dump", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
+  // dump("/tmp/dump", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
+  dump("/home/bimalka98/ros/map", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
   _input_channel.send({});
   _run_thread.join();
 

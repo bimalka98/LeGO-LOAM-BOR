@@ -1,5 +1,5 @@
 #include "dumpGraph.h"
-
+#include <iostream>
 #include <ros/time.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/common/transforms.h>
@@ -7,6 +7,19 @@
 #include <boost/filesystem.hpp>
 #include <gtsam/geometry/Pose3.h>
 #include <gtsam/slam/BetweenFactor.h>
+
+
+// fucntion to expand the ~ character in file path
+boost::filesystem::path expand(const boost::filesystem::path& path) {
+  if(path.empty() || path.string()[0] != '~') {
+    return path;
+  }
+  if(path.string().size() == 1) {
+    return boost::filesystem::path(getenv("HOME"));
+  }
+  return boost::filesystem::path(getenv("HOME")) / path.string().substr(1);
+}
+
 
 /**
  * Function to save the graph, point clouds and gps data
@@ -22,8 +35,20 @@ void dump(const std::string& dump_directory,
   const pcl::PointCloud<PointTypePose>::Ptr& cloudKeyPoses6D,
   const std::vector<sensor_msgs::NavSatFix>& gps_data
 ) {
+
+  // convert boost::filesystem::path to const string to make it compatible with the code
+  // const std::string& dump_directory = expand(map_directory).string();
+
+  // delete the dump directory if it exists: bimalka98
+  if(boost::filesystem::exists(dump_directory)) {
+    boost::filesystem::remove_all(dump_directory);
+  }
+  
+  // create the dump direcotry
   boost::filesystem::create_directories(dump_directory);
   
+  std::cout << "[INFO] map saved at" << dump_directory << std::endl;
+
   // Save the graph
   std::vector<gtsam::Pose3> keyframe_poses(isam_current_estimate.size());
   

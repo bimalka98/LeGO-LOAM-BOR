@@ -577,7 +577,8 @@ void MapOptimization::publishGlobalMap() {
   pcl::toROSMsg(*globalMapKeyFramesDS, cloudMsgTemp);
 
   // set the timestamp and frame
-  cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);  
+  // cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+  cloudMsgTemp.header.stamp = ros::Time::now(); // current time of the system
   cloudMsgTemp.header.frame_id = "camera_init";
   pubLaserCloudSurround.publish(cloudMsgTemp);
 

@@ -1,3 +1,7 @@
+## Special Notice:
+
+This package also depends on the package `entc-18-fyp-15/data_base`, when loading and saving the global 3d map. Therefore clone that first to the `catkin_ws/src` folder.
+
 # Build with ROS Noetic (Ubuntu 20.04)
 
 **Note from original LeGO-LOAM:** When you compile the code for the first time, you need to add `-j1` behind `catkin build` for generating some message types. `-j1` is not needed for future compiling.

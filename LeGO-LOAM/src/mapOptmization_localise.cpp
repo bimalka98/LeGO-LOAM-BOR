@@ -115,9 +115,9 @@ MapOptimization::MapOptimization(ros::NodeHandle &node,
   globalMapPublished = false;
 
   // Read saved cloudKeyPose3D and cloudKeyPose6D
-  std::string cloudKeyPoses3DGlobalDir = (boost::format("/tmp/dump/cloudKeyPoses3D.pcd")).str();
+  std::string cloudKeyPoses3DGlobalDir = (boost::format(mapDumpDir + "cloudKeyPoses3D.pcd")).str();
   pcl::io::loadPCDFile<PointType> (cloudKeyPoses3DGlobalDir, *cloudKeyPoses3DGlobal);
-  std::string cloudKeyPoses6DGlobalDir = (boost::format("/tmp/dump/cloudKeyPoses6D.pcd")).str();
+  std::string cloudKeyPoses6DGlobalDir = (boost::format(mapDumpDir + "cloudKeyPoses6D.pcd")).str();
   pcl::io::loadPCDFile<PointTypePose> (cloudKeyPoses6DGlobalDir, *cloudKeyPoses6DGlobal);
 
   _publish_global_thread = std::thread(&MapOptimization::publishGlobalMapThread, this);
@@ -226,6 +226,9 @@ void MapOptimization::allocateMemory() {
   aLoopIsClosed = false;
 
   latestFrameID = 0;
+
+  // save the map dump directory
+  mapDumpDir = ros::package::getPath("data_base") + "/map3d/";
 }
 
 
@@ -1158,7 +1161,7 @@ void MapOptimization::run() {
 }
 
 pcl::PointCloud<PointType>::Ptr MapOptimization::getCornerCloudKeyFrame(int index){
-  std::string cloudDir = (boost::format("/tmp/dump/%06d/cloud_corner.pcd") % index).str();
+  std::string cloudDir = (boost::format(mapDumpDir + "%06d/cloud_corner.pcd") % index).str();
   pcl::PointCloud<PointType>::Ptr tempCloud (new pcl::PointCloud<PointType>);
   pcl::io::loadPCDFile<PointType> (cloudDir, *tempCloud);
 
@@ -1166,7 +1169,7 @@ pcl::PointCloud<PointType>::Ptr MapOptimization::getCornerCloudKeyFrame(int inde
 }
 
 pcl::PointCloud<PointType>::Ptr MapOptimization::getSurfCloudKeyFrame(int index){
-  std::string cloudDir = (boost::format("/tmp/dump/%06d/cloud_surf.pcd") % index).str();
+  std::string cloudDir = (boost::format(mapDumpDir + "%06d/cloud_surf.pcd") % index).str();
   pcl::PointCloud<PointType>::Ptr tempCloud (new pcl::PointCloud<PointType>);
   pcl::io::loadPCDFile<PointType> (cloudDir, *tempCloud);
 
@@ -1174,7 +1177,7 @@ pcl::PointCloud<PointType>::Ptr MapOptimization::getSurfCloudKeyFrame(int index)
 }
 
 pcl::PointCloud<PointType>::Ptr MapOptimization::getOutlierCloudKeyFrame(int index){
-  std::string cloudDir = (boost::format("/tmp/dump/%06d/cloud_outlier.pcd") % index).str();
+  std::string cloudDir = (boost::format(mapDumpDir + "%06d/cloud_outlier.pcd") % index).str();
   pcl::PointCloud<PointType>::Ptr tempCloud (new pcl::PointCloud<PointType>);
   pcl::io::loadPCDFile<PointType> (cloudDir, *tempCloud);
 

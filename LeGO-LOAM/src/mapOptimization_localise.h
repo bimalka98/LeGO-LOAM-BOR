@@ -1,6 +1,8 @@
 #ifndef MAPOPTIMIZATION_H
 #define MAPOPTIMIZATION_H
 
+#include <ros/package.h>
+
 #include "lego_loam/utility.h"
 #include "lego_loam/channel.h"
 #include "lego_loam/nanoflann_pcl.h"
@@ -232,6 +234,9 @@ class MapOptimization {
   int latestFrameIDLoopCloure;
 
   bool aLoopIsClosed;
+
+  // directory to load map
+  std::string mapDumpDir;
   
   // wrt transformToBeMapped 
   float cRoll, sRoll, cPitch, sPitch, cYaw, sYaw, tX, tY, tZ;

@@ -37,6 +37,7 @@
 #include "mapOptimization_createMap.h"
 #include "dumpGraph.h"
 #include <future>
+#include <ros/package.h>
 
 using namespace gtsam;
 
@@ -123,7 +124,10 @@ MapOptimization::MapOptimization(ros::NodeHandle &node,
 
 MapOptimization::~MapOptimization()
 {
-  dump("/tmp/dump", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
+  // get dump directory
+  std::string dump_directory = ros::package::getPath("data_base") + "/map3d";
+
+  dump(dump_directory, *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
   // dump("/home/bimalka98/ros/map", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
   // dump("~/ros/map", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
   _input_channel.send({});

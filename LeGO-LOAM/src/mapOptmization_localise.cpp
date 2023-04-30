@@ -239,7 +239,7 @@ void MapOptimization::publishGlobalMapThread()
 
     if(globalMapPublished)
     {
-      std::cout << "GLOBAL MAP PUBLISHED!!!!" << std::endl;
+      std::cout << "[INFO:3D-MAP] global 3D map was published, from the " << mapDumpDir << "directory." << std::endl;
       break;
     }
 
@@ -572,9 +572,12 @@ void MapOptimization::publishGlobalMap() {
   downSizeFilterGlobalMapKeyFrames.setInputCloud(globalMapKeyFrames);
   downSizeFilterGlobalMapKeyFrames.filter(*globalMapKeyFramesDS);
 
+  // publishing the global map: this uses a previous time stamp: TODO: change
   sensor_msgs::PointCloud2 cloudMsgTemp;
   pcl::toROSMsg(*globalMapKeyFramesDS, cloudMsgTemp);
-  cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+
+  // set the timestamp and frame
+  cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);  
   cloudMsgTemp.header.frame_id = "camera_init";
   pubLaserCloudSurround.publish(cloudMsgTemp);
 

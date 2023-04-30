@@ -125,7 +125,7 @@ MapOptimization::MapOptimization(ros::NodeHandle &node,
 MapOptimization::~MapOptimization()
 {
   // get dump directory
-  std::string dump_directory = ros::package::getPath("data_base") + "/map3d";
+  std::string dump_directory = ros::package::getPath("data_base") + "/map3d/dump";
 
   dump(dump_directory, *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);
   // dump("/home/bimalka98/ros/map", *isam, isamCurrentEstimate, keyframeStamps, cornerCloudKeyFrames, surfCloudKeyFrames, outlierCloudKeyFrames, cloudKeyPoses3D, cloudKeyPoses6D, gps_data);

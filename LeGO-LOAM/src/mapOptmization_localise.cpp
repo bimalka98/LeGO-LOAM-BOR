@@ -228,7 +228,7 @@ void MapOptimization::allocateMemory() {
   latestFrameID = 0;
 
   // save the map dump directory
-  mapDumpDir = ros::package::getPath("data_base") + "/map3d/";
+  mapDumpDir = ros::package::getPath("data_base") + "/map3d/dump/";
 }
 
 

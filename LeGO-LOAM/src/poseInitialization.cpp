@@ -2,7 +2,7 @@
 
 PoseInitialization::PoseInitialization(ros::NodeHandle &node) : nh(node) {
 
-	init_pose_file = ros::package::getPath("lego_loam_bor") + "/initalRobotPose.txt";
+	init_pose_file = ros::package::getPath("data_base") + "/robopose/initial.txt";
 
 	init_pose_x = 0;
 	init_pose_y = 0;

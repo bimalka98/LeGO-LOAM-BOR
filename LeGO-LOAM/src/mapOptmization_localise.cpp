@@ -239,7 +239,7 @@ void MapOptimization::publishGlobalMapThread()
 
     if(globalMapPublished)
     {
-      std::cout << "[INFO:3D-MAP] global 3D map was published, from the " << mapDumpDir << "directory." << std::endl;
+      std::cout << "[INFO:3D-MAP] global 3D map was published, from the " << mapDumpDir << " directory." << std::endl;
       break;
     }
 

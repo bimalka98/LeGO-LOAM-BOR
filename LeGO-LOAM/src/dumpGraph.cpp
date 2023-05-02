@@ -47,7 +47,7 @@ void dump(const std::string& dump_directory,
   // create the dump direcotry
   boost::filesystem::create_directories(dump_directory);
   
-  std::cout << "[INFO] map saved at" << dump_directory << std::endl;
+  std::cout << "[INFO:3D-MAP] global 3D map was saved at " << dump_directory << " directory." << std::endl;
 
   // Save the graph
   std::vector<gtsam::Pose3> keyframe_poses(isam_current_estimate.size());

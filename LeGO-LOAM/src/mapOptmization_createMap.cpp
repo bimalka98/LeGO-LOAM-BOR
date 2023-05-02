@@ -507,7 +507,7 @@ void MapOptimization::publishTF() {
   geometry_msgs::Quaternion geoQuat = tf::createQuaternionMsgFromRollPitchYaw(
       transformAftMapped[2], -transformAftMapped[0], -transformAftMapped[1]);
 
-  odomAftMapped.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+  odomAftMapped.header.stamp = ros::Time::now();
   odomAftMapped.pose.pose.orientation.x = -geoQuat.y;
   odomAftMapped.pose.pose.orientation.y = -geoQuat.z;
   odomAftMapped.pose.pose.orientation.z = geoQuat.x;
@@ -523,7 +523,7 @@ void MapOptimization::publishTF() {
   odomAftMapped.twist.twist.linear.z = transformBefMapped[5];
   pubOdomAftMapped.publish(odomAftMapped);
 
-  aftMappedTrans.stamp_ = ros::Time().fromSec(timeLaserOdometry);
+  aftMappedTrans.stamp_ = ros::Time::now();
   aftMappedTrans.setRotation(
       tf::Quaternion(-geoQuat.y, -geoQuat.z, geoQuat.x, geoQuat.w));
   aftMappedTrans.setOrigin(tf::Vector3(
@@ -535,7 +535,7 @@ void MapOptimization::publishKeyPosesAndFrames() {
   if (pubKeyPoses.getNumSubscribers() != 0) {
     sensor_msgs::PointCloud2 cloudMsgTemp;
     pcl::toROSMsg(*cloudKeyPoses3D, cloudMsgTemp);
-    cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+    cloudMsgTemp.header.stamp = ros::Time::now();
     cloudMsgTemp.header.frame_id = "camera_init";
     pubKeyPoses.publish(cloudMsgTemp);
   }
@@ -543,7 +543,7 @@ void MapOptimization::publishKeyPosesAndFrames() {
   if (pubRecentKeyFrames.getNumSubscribers() != 0) {
     sensor_msgs::PointCloud2 cloudMsgTemp;
     pcl::toROSMsg(*laserCloudSurfFromMapDS, cloudMsgTemp);
-    cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+    cloudMsgTemp.header.stamp = ros::Time::now();
     cloudMsgTemp.header.frame_id = "camera_init";
     pubRecentKeyFrames.publish(cloudMsgTemp);
   }
@@ -587,7 +587,7 @@ void MapOptimization::publishGlobalMap() {
 
   sensor_msgs::PointCloud2 cloudMsgTemp;
   pcl::toROSMsg(*globalMapKeyFramesDS, cloudMsgTemp);
-  cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+  cloudMsgTemp.header.stamp = ros::Time::now();
   cloudMsgTemp.header.frame_id = "camera_init";
   pubLaserCloudSurround.publish(cloudMsgTemp);
 
@@ -659,7 +659,7 @@ bool MapOptimization::detectLoopClosure() {
   if (pubHistoryKeyFrames.getNumSubscribers() != 0) {
     sensor_msgs::PointCloud2 cloudMsgTemp;
     pcl::toROSMsg(*nearHistorySurfKeyFrameCloudDS, cloudMsgTemp);
-    cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+    cloudMsgTemp.header.stamp = ros::Time::now();
     cloudMsgTemp.header.frame_id = "camera_init";
     pubHistoryKeyFrames.publish(cloudMsgTemp);
   }
@@ -709,7 +709,7 @@ void MapOptimization::performLoopClosure() {
                              icp.getFinalTransformation());
     sensor_msgs::PointCloud2 cloudMsgTemp;
     pcl::toROSMsg(*closed_cloud, cloudMsgTemp);
-    cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+    cloudMsgTemp.header.stamp = ros::Time::now();
     cloudMsgTemp.header.frame_id = "camera_init";
     pubIcpKeyFrames.publish(cloudMsgTemp);
   }

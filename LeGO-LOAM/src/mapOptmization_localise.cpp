@@ -501,7 +501,7 @@ void MapOptimization::publishTF() {
   geometry_msgs::Quaternion geoQuat = tf::createQuaternionMsgFromRollPitchYaw(
       transformAftMapped[2], -transformAftMapped[0], -transformAftMapped[1]);
 
-  odomAftMapped.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+  odomAftMapped.header.stamp = ros::Time::now();
   odomAftMapped.pose.pose.orientation.x = -geoQuat.y;
   odomAftMapped.pose.pose.orientation.y = -geoQuat.z;
   odomAftMapped.pose.pose.orientation.z = geoQuat.x;
@@ -517,7 +517,7 @@ void MapOptimization::publishTF() {
   odomAftMapped.twist.twist.linear.z = transformBefMapped[5];
   pubOdomAftMapped.publish(odomAftMapped);
 
-  aftMappedTrans.stamp_ = ros::Time().fromSec(timeLaserOdometry);
+  aftMappedTrans.stamp_ = ros::Time::now();
   aftMappedTrans.setRotation(
       tf::Quaternion(-geoQuat.y, -geoQuat.z, geoQuat.x, geoQuat.w));
   aftMappedTrans.setOrigin(tf::Vector3(
@@ -530,7 +530,7 @@ void MapOptimization::publishKeyPosesAndFrames() {
   if (pubRecentKeyFrames.getNumSubscribers() != 0) {
     sensor_msgs::PointCloud2 cloudMsgTemp;
     pcl::toROSMsg(*laserCloudSurfFromMapDS, cloudMsgTemp);
-    cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+    cloudMsgTemp.header.stamp = ros::Time::now();
     cloudMsgTemp.header.frame_id = "camera_init";
     pubRecentKeyFrames.publish(cloudMsgTemp);
   }

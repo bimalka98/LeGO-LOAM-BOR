@@ -90,3 +90,15 @@ TypeError: cannot use a string pattern on a bytes-like object
 <p align='left'>
     <img src="./lego-loam-rqt_graph.png" alt="drawing" width="800"/>
 </p>
+
+## Git Rebase Notice
+
+**Made the algorithms compatible with live sensor streams**
+
+```c++
+// change all occurrences
+odomAftMapped.header.stamp = ros::Time().fromSec(timeLaserOdometry);
+
+// to this ros::Time::now();
+odomAftMapped.header.stamp = ros::Time::now()
+```

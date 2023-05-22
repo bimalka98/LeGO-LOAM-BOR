@@ -51,7 +51,7 @@ private:
 	void readPoseFromFile();
 
 	/**
-	 * publishes the vehicle's initial position as odometry message on '/tf/odometry'
+	 * publishes the vehicle's initial position as odometry message on '/odometry/init_pose'
 	 */
 	void publishInitialPose();
 

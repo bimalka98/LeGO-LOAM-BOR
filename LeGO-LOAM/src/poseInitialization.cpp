@@ -11,7 +11,7 @@ PoseInitialization::PoseInitialization(ros::NodeHandle &node) : nh(node) {
 	init_pose_pitch = 0;
 	init_pose_yaw = 0;
 
-	pubInitialPose = nh.advertise<nav_msgs::Odometry>("/tf/odometry", 5);
+	pubInitialPose = nh.advertise<nav_msgs::Odometry>("/odometry/init_pose", 5);
 
 	_run_thread = std::thread (&PoseInitialization::runPoseInitialization, this);
 }

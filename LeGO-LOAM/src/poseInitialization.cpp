@@ -29,12 +29,10 @@ void PoseInitialization::readPoseFromFile(){
 			std::cout << "Can't read init_pose_file" << std::endl;
 		}
 
-		std::cout << init_pose_x << std::endl;
-		std::cout << init_pose_y << std::endl;
-		std::cout << init_pose_z << std::endl;
-		std::cout << init_pose_roll << std::endl;
-		std::cout << init_pose_pitch << std::endl;
-		std::cout << init_pose_yaw << std::endl;
+		// print the data to the screen: on single line, round to 2 decimal places
+		std::cout << std::fixed << std::setprecision(2) << "[INFO:INIT-POSE] x: " << init_pose_x << " y: " << init_pose_y << " z: " << init_pose_z << " roll: " << init_pose_roll << " pitch: " << init_pose_pitch << " yaw: " << init_pose_yaw << std::endl;
+
+		
 	}
 	catch(const std::exception& e){
 		std::cerr << e.what() << std::endl;

@@ -52,16 +52,14 @@ MapOptimization::MapOptimization(ros::NodeHandle &node,
   isam = new ISAM2(parameters);
 
   pubKeyPoses = nh.advertise<sensor_msgs::PointCloud2>("/key_pose_origin", 2);
-  pubLaserCloudSurround =
-      nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_surround", 2);
-  pubOdomAftMapped = nh.advertise<nav_msgs::Odometry>("/aft_mapped_to_init", 5);
 
-  pubHistoryKeyFrames =
-      nh.advertise<sensor_msgs::PointCloud2>("/history_cloud", 2);
-  pubIcpKeyFrames =
-      nh.advertise<sensor_msgs::PointCloud2>("/corrected_cloud", 2);
-  pubRecentKeyFrames =
-      nh.advertise<sensor_msgs::PointCloud2>("/recent_cloud", 2);
+  // made the latch true to save the last published map
+  pubLaserCloudSurround = nh.advertise<sensor_msgs::PointCloud2>("/laser_cloud_surround", 2, true);
+  
+  pubOdomAftMapped = nh.advertise<nav_msgs::Odometry>("/aft_mapped_to_init", 5);
+  pubHistoryKeyFrames = nh.advertise<sensor_msgs::PointCloud2>("/history_cloud", 2);
+  pubIcpKeyFrames = nh.advertise<sensor_msgs::PointCloud2>("/corrected_cloud", 2);
+  pubRecentKeyFrames = nh.advertise<sensor_msgs::PointCloud2>("/recent_cloud", 2);
 
   downSizeFilterCorner.setLeafSize(0.2, 0.2, 0.2);
   downSizeFilterSurf.setLeafSize(0.4, 0.4, 0.4);

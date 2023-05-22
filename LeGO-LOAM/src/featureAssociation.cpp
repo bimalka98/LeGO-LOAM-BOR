@@ -81,7 +81,7 @@ FeatureAssociation::FeatureAssociation(ros::NodeHandle &node,
 
   initializationValue();
 
-  subInitialPose = nh.subscribe("/odometry/init_pose", 10, &FeatureAssociation::subInitialPoseCallback, this);
+  subInitialPose = nh.subscribe("/robopose/initial", 10, &FeatureAssociation::subInitialPoseCallback, this);
 
  _run_thread = std::thread (&FeatureAssociation::runFeatureAssociation, this);
 }
